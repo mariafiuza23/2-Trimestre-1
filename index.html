@@ -41,15 +41,19 @@
         <p class="artigo-autor">Por: Maria Helena Fiuza</p class="artigo-autor">
         <p>Neste blog vou compartilhar minhas opiniões e previsões sobre a fase de grupos da Copa do Mundo de 2026.</p>
         <button>❤️<span>0</span></button>
+        <button>⚽<span>0</span></button>
         </div>
     </main>
 </body>
     <script>
-    const botao = document.querySelector("button");
-    botao.addEventListener("click", botaoClicado);
+    const botoes = document.querySelectorAll("button");
 
-    function botaoClicado() {
-        console.log("fui clicado");
+    botoes.forEach(botao => {
+        botao.addEventListener("click", botaoClicado);
+    });
+
+    function botaoClicado(evento) {
+        const botao = evento.currentTarget;
         let texto = botao.querySelector("span");
         texto.textContent++;
     }
